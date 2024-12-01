@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D&P: Formas de Pago</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f2f5; /* Fondo gris claro */
+      color: #343a40; /* Texto gris oscuro */
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background-color: #343a40; /* Gris oscuro */
+      padding: 10px 0;
+    }
+
+    .navigation a {
+      text-decoration: none;
+      font-size: 1rem;
+      color: #ff6f61; /* Coral */
+      padding: 10px 15px;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .navigation a:hover {
+      background-color: #ff6f61; /* Coral */
+      color: #fff; /* Texto blanco */
+    }
+
+    .navigation .active {
+      background-color: #ff6f61; /* Coral */
+      color: #fff; /* Texto blanco */
+    }
+
+    .payment-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .payment-header {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .payment-header h1 {
+      font-size: 2rem;
+      color: #ff6f61; /* Coral */
+      margin-bottom: 10px;
+    }
+
+    .payment-header p {
+      font-size: 1rem;
+      color: #495057; /* Gris intermedio */
+    }
+
+    .payment-methods {
+      margin-top: 30px;
+    }
+
+    .payment-methods h2 {
+      font-size: 1.5rem;
+      color: #ff6f61; /* Coral */
+      margin-bottom: 20px;
+    }
+
+    .payment-methods ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .payment-methods ul li {
+      font-size: 1.2rem;
+      color: #495057; /* Gris intermedio */
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    .payment-methods ul li i {
+      color: #ff6f61; /* Coral */
+      margin-right: 10px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #343a40; /* Gris oscuro */
+      color: #fff; /* Texto blanco */
+      margin-top: 40px;
+    }
+.navigation .logo {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Mantiene el logo a la izquierda */
+
+  text-decoration: none;
+  color: #fff;
+}
+
+.navigation .logo img {
+  height: 40px; /* Ajusta el tamaño del logo */
+  margin-right: 5px;
+}
+
+.navigation .logo span {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+    .footer p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .footer a {
+      color: #ff6f61; /* Coral */
+      text-decoration: none;
+      margin-left: 5px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navigation">
+           <a href="Principal.html" class="logo">
+          <img src="Logo.jpg" alt="Dreams & Prints Logo">
+          <span>Dreams & Prints</span>
+        </a>
+    <a href="Principal.html"><i class="fas fa-home"></i> Inicio</a>
+    <a href="Catalogo.html"><i class="fas fa-th-list"></i> Catálogo</a>
+    <a href="Formas_Pago.html" class="active"><i class="fas fa-credit-card"></i> Formas de Pago</a>
+    <a href="Configuracion_Piezas.html"><i class="fas fa-cogs"></i> Configuración de Piezas</a>
+    <a href="Compras.html"><i class="fas fa-shopping-cart"></i> Carrito de Compras</a>
+    <a href="Acerca_de.html" ><i class="fas fa-info-circle"></i> Acerca de</a>
+    <a href="Sesion.html"><i class="fas fa-user"></i> Cuenta</a>
+  </nav>
+  <div class="payment-container">
+    <div class="payment-header">
+      <h1>Formas de Pago</h1>
+      <p>Elige tu método de pago preferido para una experiencia rápida y segura.</p>
+    </div>
+    <div class="payment-methods">
+      <h2>Opciones Disponibles:</h2>
+      <ul>
+        <li><i class="fas fa-credit-card"></i> Tarjeta de Crédito o Débito (Visa, MasterCard, American Express)</li>
+        <li><i class="fas fa-paypal"></i> PayPal</li>
+        <li><i class="fas fa-university"></i> Transferencia Bancaria</li>
+        <li><i class="fas fa-money-bill-wave"></i> Pago en Efectivo (en tiendas participantes)</li>
+        <li><i class="fab fa-bitcoin"></i> Criptomonedas (Bitcoin, Ethereum)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer">
+    <p>&copy; 2024 Dreams & Prints. Todos los derechos reservados.</p>
+    <p>Visita nuestra <a href="index.html">página principal</a>.</p>
+  </div>
+</body>
+</html>
+

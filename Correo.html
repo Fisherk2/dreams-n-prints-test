@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D&P: Recuperación de Cuenta</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      emailjs.init("KY9gRqt35YF_eCCKA");
+    })();
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa; /* Fondo gris claro */
+      color: #343a40; /* Texto gris oscuro */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .recovery-container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .recovery-container h2 {
+      margin-bottom: 20px;
+      color: #ff6f61; /* Coral */
+    }
+
+    .recovery-container .input-group {
+      margin-bottom: 20px;
+    }
+
+    .recovery-container .input-group label {
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+      color: #495057; /* Gris intermedio */
+    }
+
+    .recovery-container .input-group input {
+      width: 95%;
+      padding: 10px;
+      border: 1px solid #ced4da; /* Gris claro */
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .recovery-container .send-button {
+      background-color: #ff6f61; /* Coral */
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .recovery-container .send-button:hover {
+      background-color: #ff4c4c; /* Rojo claro */
+    }
+
+    .recovery-container .back-button {
+      background-color: #6c757d; /* Gris mediano */
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .recovery-container .back-button:hover {
+      background-color: #5a6268; /* Gris más oscuro */
+    }
+  </style>
+</head>
+<body>
+  <div class="recovery-container">
+    <h2>Recuperación de Cuenta</h2>
+    <form id="recovery-form">
+      <div class="input-group">
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <button type="button" class="send-button" onclick="sendRecoveryCode()">Enviar Código</button>
+    </form>
+    <button class="back-button" onclick="window.location.href='Principal.html'">Volver a la página principal</button>
+  </div>
+
+  <script type="text/javascript">
+    function sendRecoveryCode() {
+      var email = document.getElementById('email').value;
+      var recoveryCode = Math.floor(10000 + Math.random() * 90000); // Código de 5 dígitos
+
+      var templateParams = {
+        email: email,
+        recovery_code: recoveryCode
+      };
+
+      emailjs.send('service_o28uckr', 'template_4oh2668', templateParams)
+        .then(function(response) {
+          alert('Código de recuperación enviado correctamente a ' + email);
+        }, function(error) {
+          alert('Error al enviar el correo electrónico: ' + JSON.stringify(error));
+        });
+    }
+  </script>
+</body>
+</html>

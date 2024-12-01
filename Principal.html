@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D&P: Inicio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa; /* Fondo gris claro */
+      color: #343a40; /* Texto gris oscuro */
+    }
+
+    .top-banner {
+      background: linear-gradient(90deg, #ff6f61 0%, #ff9671 100%);
+      text-align: center;
+      padding: 10px;
+      color: #fff; /* Texto blanco */
+      font-size: 1rem;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background-color: #343a40; /* Gris oscuro */
+      padding: 10px 0;
+    }
+
+    .navigation a {
+      text-decoration: none;
+      font-size: 1rem;
+      color: #ff6f61; /* Coral */
+      padding: 10px 15px;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .navigation a:hover {
+      background-color: #ff6f61; /* Coral */
+      color: #fff; /* Texto blanco */
+    }
+
+.navigation .logo {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Mantiene el logo a la izquierda */
+  
+  text-decoration: none;
+  color: #fff;
+}
+
+.navigation .logo img {
+  height: 40px; /* Ajusta el tamaño del logo */
+  margin-right: 5px;
+}
+
+.navigation .logo span {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+    .navigation .active {
+      background-color: #ff6f61; /* Coral */
+      color: #fff; /* Texto blanco */
+    }
+
+    .content {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .intro h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3rem;
+      color: #ff6f61; /* Coral */
+      margin-bottom: 10px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .intro span {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #343a40; /* Gris oscuro */
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .cta {
+      background: linear-gradient(90deg, #ff6f61 0%, #ff9671 100%);
+      color: #fff; /* Texto blanco */
+      border: none;
+      padding: 15px 30px;
+      border-radius: 20px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .cta:hover {
+      background-color: #ff4c4c; /* Rojo claro */
+      transform: scale(1.1);
+    }
+
+    .images {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .images img {
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+      animation: fadeIn 2s ease-in-out;
+      transition: transform 0.3s ease;
+    }
+
+    .images img:hover {
+      transform: scale(1.1);
+    }
+
+    .description {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #495057; /* Gris intermedio */
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .values {
+      max-width: 800px;
+      margin: 40px auto;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #495057; /* Gris intermedio */
+      text-align: left;
+      padding: 20px 0;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .values h2 {
+      font-size: 2rem;
+      color: #ff6f61; /* Coral */
+      margin-bottom: 15px;
+    }
+
+    .video-background {
+      position: relative;
+      overflow: hidden;
+    }
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-height: 400px; /* Ajusta la altura según lo desees */
+  overflow: hidden;
+  margin: 20px 0; /* Espaciado entre secciones */
+}
+
+/* Ajusta el tamaño del video */
+#bg-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+    <div class="content">
+      <header class="top-banner">
+        <p></p>
+      </header>
+      <nav class="navigation">
+        <a href="Principal.html" class="logo">
+          <img src="Logo.jpg" alt="Dreams & Prints Logo">
+          <span>Dreams & Prints</span>
+        </a>
+        <a href="Principal.html" class="active"><i class="fas fa-home"></i> Inicio</a>
+        <a href="Catalogo.html"><i class="fas fa-th-list"></i> Catálogo</a>
+        <a href="Formas_Pago.html"><i class="fas fa-credit-card"></i> Formas de Pago</a>
+        <a href="Configuracion_Piezas.html"><i class="fas fa-cogs"></i> Configuración de Piezas</a>
+        <a href="Compras.html"><i class="fas fa-shopping-cart"></i> Carrito de Compras</a>
+        <a href="Acerca_de.html"><i class="fas fa-info-circle"></i> Acerca de</a>
+        <a href="Sesion.html"><i class="fas fa-user"></i> Cuenta</a>
+      </nav>
+      <main class="content">
+        <div class="intro">
+          <h1><span>Bienvenido a</span><br>Dreams & Prints</h1>
+          <button class="cta" onclick="document.getElementById('about-us').scrollIntoView({ behavior: 'smooth' });">Conócenos</button>
+        </div>
+        <div class="images">
+          <img src="Logo.jpg" alt="Dreams & Prints">
+        </div>
+        <p class="description">
+          Impulsa tus ideas con piezas 3D personalizadas de manera rápida y sencilla.
+        </p>
+        <section id="about-us" class="values">
+          <h2>¿Quiénes Somos?</h2>
+          <p align="justify">Somos una empresa dedicada a la impresión 3D personalizada, ofreciendo soluciones rápidas y eficientes para materializar tus ideas. Nuestra misión es proporcionar productos de alta calidad y un excelente servicio al cliente, asegurándonos de que cada pieza cumpla con los estándares más altos.</p>
+
+<div class="video-container">
+  <video autoplay muted loop id="bg-video">
+    <source src="3DPrint.mp4" type="video/mp4">
+  </video>
+</div>
+          <h2>Nuestros Valores</h2>
+          <ul align="justify">
+            <li><strong>Innovación:</strong> Estamos comprometidos con la innovación constante, utilizando la última tecnología en impresión 3D para ofrecer productos únicos y personalizados.</li>
+            <li><strong>Calidad:</strong> Nos esforzamos por garantizar la mejor calidad en cada pieza, cuidando cada detalle para superar las expectativas de nuestros clientes.</li>
+            <li><strong>Servicio al Cliente:</strong> Creemos en la importancia de un excelente servicio al cliente, ofreciendo atención personalizada y soluciones adaptadas a las necesidades de cada cliente.</li>
+          </ul>
+
+          <h2>Lo Que Hacemos</h2>
+          <p align="justify">Nos especializamos en la fabricación de piezas personalizadas mediante la impresión 3D. Atendemos a una amplia variedad de sectores, desde particulares que desean crear objetos únicos, hasta empresas que necesitan prototipos funcionales. Nuestro proceso es simple y eficiente, permitiéndote realizar pedidos en línea de manera rápida y sencilla.</p>
+
+          <h2>Innovación</h2>
+          <p align="justify">Nos destacamos por nuestra capacidad de innovar en el mercado de la impresión 3D, ofreciendo soluciones únicas que no se encuentran fácilmente en otros lugares. Aprovechamos las oportunidades del mercado, cubriendo una necesidad latente en la producción de piezas personalizadas por pedido.</p>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

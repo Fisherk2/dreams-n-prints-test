@@ -1,0 +1,10 @@
+version: "3.8" # Versión de Docker Compose
+
+services:
+  web:
+    build: .
+    container_name: html-app # Nombre del contenedor
+    ports:
+      - "8080:80" # Expón el puerto 80 del contenedor en el puerto 8080 del host (Apache)
+    networks:
+      - app-network # Conecta el contenedor web a la red de la aplicación

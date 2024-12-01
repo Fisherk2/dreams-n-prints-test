@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D&P: Carrito</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa; /* Fondo gris claro */
+      color: #343a40; /* Texto gris oscuro */
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background-color: #343a40; /* Gris oscuro */
+      padding: 10px 0;
+    }
+
+    .navigation a {
+      text-decoration: none;
+      font-size: 1rem;
+      color: #ff6f61; /* Coral */
+      padding: 10px 15px;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .navigation a:hover {
+      background-color: #ff6f61; /* Coral */
+      color: #fff; /* Texto blanco */
+    }
+
+    .navigation .active {
+      background-color: #ff6f61; /* Coral */
+      color: #fff; /* Texto blanco */
+    }
+
+    .cart-container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-header {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .cart-item img {
+      width: 80px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .cart-item h2 {
+      font-size: 1.2rem;
+      color: #ff6f61; /* Coral */
+      margin: 0 10px;
+    }
+
+    .cart-item p {
+      font-size: 1rem;
+      color: #495057; /* Gris intermedio */
+    }
+
+    .cart-item .price {
+      font-size: 1.2rem;
+      color: #343a40; /* Gris oscuro */
+    }
+
+    .cart-item .cta {
+      background: linear-gradient(90deg, #ff6f61 0%, #ff9671 100%);
+      color: #fff; /* Texto blanco */
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .cart-item .cta:hover {
+      background-color: #ff4c4c; /* Rojo claro */
+      transform: scale(1.1);
+    }
+
+    .cart-total {
+      text-align: right;
+      font-size: 1.5rem;
+      color: #343a40; /* Gris oscuro */
+      padding: 20px 0;
+      border-top: 1px solid #ddd;
+    }
+
+    .checkout-btn {
+      display: block;
+      width: 100%;
+      background: linear-gradient(90deg, #ff6f61 0%, #ff9671 100%);
+      color: #fff; /* Texto blanco */
+      border: none;
+      padding: 15px 0;
+      border-radius: 20px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      text-align: center;
+      margin-top: 20px;
+    }
+.navigation .logo {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Mantiene el logo a la izquierda */
+
+  text-decoration: none;
+  color: #fff;
+}
+
+.navigation .logo img {
+  height: 40px; /* Ajusta el tamaño del logo */
+  margin-right: 5px;
+}
+
+.navigation .logo span {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+    .checkout-btn:hover {
+      background-color: #ff4c4c; /* Rojo claro */
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <nav class="navigation">
+           <a href="Principal.html" class="logo">
+          <img src="Logo.jpg" alt="Dreams & Prints Logo">
+          <span>Dreams & Prints</span>
+        </a>
+
+    <a href="Principal.html"><i class="fas fa-home"></i> Inicio</a>
+    <a href="Catalogo.html"><i class="fas fa-th-list"></i> Catálogo</a>
+    <a href="Formas_Pago.html"><i class="fas fa-credit-card"></i> Formas de Pago</a>
+    <a href="Configuracion_Piezas.html"><i class="fas fa-cogs"></i> Configuración de Piezas</a>
+    <a href="Compras.html" class="active"><i class="fas fa-shopping-cart"></i> Carrito de Compras</a>
+    <a href="Acerca_de.html" ><i class="fas fa-info-circle"></i> Acerca de</a>
+    <a href="Sesion.html"><i class="fas fa-user"></i> Cuenta</a>
+  </nav>
+  <div class="cart-container">
+    <div class="cart-header">
+      <h1>Tu Carrito de Compras</h1>
+    </div>
+    <div class="cart-item">
+      <img src="pieza1.jpg" alt="Pieza 1">
+      <div>
+        <h2>Pieza 1</h2>
+        <p>Descripción breve de la pieza 1.</p>
+      </div>
+      <p class="price">$19.99</p>
+      <button class="cta">Eliminar</button>
+    </div>
+    <div class="cart-item">
+      <img src="pieza2.jpg" alt="Pieza 2">
+      <div>
+        <h2>Pieza 2</h2>
+        <p>Descripción breve de la pieza 2.</p>
+      </div>
+      <p class="price">$29.99</p>
+      <button class="cta">Eliminar</button>
+    </div>
+    <!-- Añade más elementos de carrito de manera similar -->
+    <div class="cart-total">
+      Total: $49.98
+    </div>
+    <button class="checkout-btn">Proceder al Pago</button>
+  </div>
+</body>
+</html>
