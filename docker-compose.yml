@@ -1,10 +1,17 @@
-version: "3.8" # Versión de Docker Compose
+version: "3.8"
 
 services:
   web:
     build: .
-    container_name: html-app # Nombre del contenedor
+    container_name: dreams-n-prints
     ports:
-      - "8080:80" # Expón el puerto 80 del contenedor en el puerto 8080 del host (Apache)
+      - "80:80"
+    volumes:
+      - .:/usr/local/apache2/htdocs
+    restart: always
     networks:
-      - app-network # Conecta el contenedor web a la red de la aplicación
+      - dreams-network
+
+networks:
+  dreams-network:
+    driver: bridge
