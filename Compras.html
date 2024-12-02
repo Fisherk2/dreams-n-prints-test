@@ -21,6 +21,7 @@
       gap: 15px;
       background-color: #343a40; /* Gris oscuro */
       padding: 10px 0;
+      flex-wrap: wrap; /* Añadido para que la navegación se apile en pantallas pequeñas */
     }
 
     .navigation a {
@@ -72,10 +73,13 @@
       justify-content: space-between;
       padding: 10px 0;
       border-bottom: 1px solid #ddd;
+      flex-wrap: wrap; /* Añadido para que los elementos se apilen en pantallas pequeñas */
     }
 
     .cart-item p {
       margin: 0;
+      flex: 1 1 100%; /* Los elementos ocuparán el 100% del ancho en pantallas pequeñas */
+      text-align: left;
     }
 
     .delete-btn {
@@ -86,6 +90,8 @@
       padding: 5px 10px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      flex: 1 1 100%; /* El botón ocupará el 100% del ancho en pantallas pequeñas */
+      margin-top: 10px;
     }
 
     .delete-btn:hover {
@@ -132,6 +138,29 @@
     .navigation .logo span {
       font-size: 1.2em;
       font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .cart-container {
+        margin: 20px;
+        padding: 10px;
+      }
+
+      .cart-header h1 {
+        font-size: 1.5rem;
+      }
+
+      .cart-header p {
+        font-size: 0.9rem;
+      }
+
+      .total {
+        font-size: 1rem;
+      }
+
+      .checkout-btn {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>

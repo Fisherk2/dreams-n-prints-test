@@ -73,7 +73,6 @@
     .recovery-container .send-button:hover {
       background-color: #ff4c4c; /* Rojo claro */
     }
-
     .recovery-container .back-button {
       background-color: #6c757d; /* Gris mediano */
       color: #fff;
@@ -89,6 +88,22 @@
     .recovery-container .back-button:hover {
       background-color: #5a6268; /* Gris más oscuro */
     }
+
+    /* Media queries para hacer la página más responsiva */
+    @media (max-width: 600px) {
+      .recovery-container {
+        padding: 20px; /* Ajustar el padding en pantallas pequeñas */
+      }
+
+      .recovery-container h2 {
+        font-size: 1.5rem; /* Ajustar el tamaño de fuente en pantallas pequeñas */
+      }
+
+      .recovery-container .send-button,
+      .recovery-container .back-button {
+        width: 100%; /* Botones a lo largo del contenedor en pantallas pequeñas */
+      }
+    }
   </style>
 </head>
 <body>
@@ -103,7 +118,6 @@
     </form>
     <button class="back-button" onclick="window.location.href='Principal.html'">Volver a la página principal</button>
   </div>
-
   <script type="text/javascript">
     function sendRecoveryCode() {
       var email = document.getElementById('email').value;
@@ -124,3 +138,4 @@
   </script>
 </body>
 </html>
+

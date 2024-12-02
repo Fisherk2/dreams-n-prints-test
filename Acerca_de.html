@@ -21,6 +21,7 @@
       gap: 15px;
       background-color: #343a40; /* Gris oscuro */
       padding: 10px 0;
+      flex-wrap: wrap; /* Añadido para que la navegación se apile en pantallas pequeñas */
     }
 
     .navigation a {
@@ -77,7 +78,6 @@
       color: #ff6f61; /* Coral */
       margin-bottom: 10px;
     }
-
     .about-content p {
       font-size: 1rem;
       color: #495057; /* Gris intermedio */
@@ -112,35 +112,66 @@
       text-decoration: none;
       margin-left: 5px;
     }
-.navigation .logo {
-  display: flex;
-  align-items: center;
-  margin-right: 20px; /* Mantiene el logo a la izquierda */
 
-  text-decoration: none;
-  color: #fff;
-}
+    .navigation .logo {
+      display: flex;
+      align-items: center;
+      margin-right: 20px; /* Mantiene el logo a la izquierda */
+      text-decoration: none;
+      color: #fff;
+    }
 
-.navigation .logo img {
-  height: 40px; /* Ajusta el tamaño del logo */
-  margin-right: 5px;
-}
+    .navigation .logo img {
+      height: 40px; /* Ajusta el tamaño del logo */
+      margin-right: 5px;
+    }
 
-.navigation .logo span {
-  font-size: 1.2em;
-  font-weight: bold;
-}
+    .navigation .logo span {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
     .footer a:hover {
       text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .about-container {
+        margin: 20px;
+        padding: 10px;
+      }
+      .about-header h1 {
+        font-size: 1.5rem;
+      }
+
+      .about-header p {
+        font-size: 0.9rem;
+      }
+
+      .about-content h2 {
+        font-size: 1.2rem;
+      }
+
+      .about-content p, .about-content ul li {
+        font-size: 0.9rem;
+      }
+
+      .footer p {
+        font-size: 0.9rem;
+      }
+
+      .footer a {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
   <nav class="navigation">
-             <a href="Principal.html" class="logo">
-          <img src="Logo.jpg" alt="Dreams & Prints Logo">
-          <span>Dreams & Prints</span>
-        </a>
+    <a href="Principal.html" class="logo">
+      <img src="Logo.jpg" alt="Dreams & Prints Logo">
+      <span>Dreams & Prints</span>
+    </a>
     <a href="Principal.html"><i class="fas fa-home"></i> Inicio</a>
     <a href="Catalogo.html"><i class="fas fa-th-list"></i> Catálogo</a>
     <a href="Formas_Pago.html"><i class="fas fa-credit-card"></i> Formas de Pago</a>

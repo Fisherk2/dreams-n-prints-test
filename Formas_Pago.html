@@ -1,125 +1,313 @@
 <!DOCTYPE html>
 <html lang="es">
-<head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>D&P: Formas de Pago</title> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <style> @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap'); body { margin: 0; font-family: 'Roboto', sans-serif; background-color: #f0f2f5; color: #343a40; } .navigation { display: flex; justify-content: center; gap: 15px; background-color: #343a40; padding: 10px 0; } .navigation a { text-decoration: none; font-size: 1rem; color: #ff6f61; padding: 10px 15px; border-radius: 20px; transition: background-color 0.3s ease, color 0.3s ease; } .navigation a:hover { background-color: #ff6f61; color: #fff; } .navigation .active { background-color: #ff6f61; color: #fff; } .navigation .logo { display: flex; align-items: center; margin-right: 20px; text-decoration: none; color: #fff; } .navigation .logo img { height: 40px; margin-right: 5px; } .navigation .logo span { font-size: 1.2em; font-weight: bold; } .payment-container { max-width: 800px; margin: 40px auto; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); } .payment-header { text-align: center; padding: 20px 0; } .payment-header h1 { font-size: 2rem; color: #ff6f61; margin-bottom: 10px; } .payment-methods ul { list-style: none; padding: 0; } .payment-methods ul li { font-size: 1.2rem; color: #495057; margin-bottom: 15px; display: flex; align-items: center; } .payment-methods ul li i { color: #ff6f61; margin-right: 10px; } .payment-form { margin-top: 30px; } .payment-form h2 { font-size: 1.5rem; color: #ff6f61; margin-bottom: 20px; } .payment-form label { display: block; margin-bottom: 5px; font-weight: bold; color: #495057; } .payment-form input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; } .payment-form button { width: 100%; padding: 15px; background: linear-gradient(90deg, #ff6f61 0%, #ff9671 100%); color: white; border: none; border-radius: 20px; font-size: 1rem; cursor: pointer; transition: transform 0.3s; } .payment-form button:hover { transform: scale(1.05); } .footer { text-align: center; padding: 20px 0; background-color: #343a40; color: #fff; margin-top: 40px; } .footer p { margin: 0; font-size: 1rem; } .footer a { color: #ff6f61; text-decoration: none; margin-left: 5px; } .footer a:hover { text-decoration: underline; } </style> </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D&P: Formas de Pago</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f2f5;
+      color: #343a40;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background-color: #343a40;
+      padding: 10px 0;
+      flex-wrap: wrap; /* Permite que los enlaces se ajusten en varias filas */
+    }
+
+    .navigation a {
+      text-decoration: none;
+      font-size: 1rem;
+      color: #ff6f61;
+      padding: 10px 15px;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .navigation a:hover {
+      background-color: #ff6f61;
+      color: #fff;
+    }
+
+    .navigation .active {
+      background-color: #ff6f61;
+      color: #fff;
+    }
+
+    .navigation .logo {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .navigation .logo img {
+      height: 40px;
+      margin-right: 5px;
+    }
+
+    .navigation .logo span {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .payment-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .payment-header {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .payment-header h1 {
+      font-size: 2rem;
+      color: #ff6f61;
+      margin-bottom: 10px;
+    }
+
+    .payment-methods ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .payment-methods ul li {
+      font-size: 1.2rem;
+      color: #495057;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    .payment-methods ul li i {
+      color: #ff6f61;
+      margin-right: 10px;
+    }
+
+    .payment-form {
+      margin-top: 30px;
+    }
+
+    .payment-form h2 {
+      font-size: 1.5rem;
+      color: #ff6f61;
+      margin-bottom: 20px;
+    }
+
+    .payment-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #495057;
+    }
+
+    .payment-form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .payment-form button {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(90deg, #ff6f61 0%, #ff9671 100%);
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .payment-form button:hover {
+      transform: scale(1.05);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #343a40;
+      color: #fff;
+      margin-top: 40px;
+    }
+
+    .footer p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .footer a {
+      color: #ff6f61;
+      text-decoration: none;
+      margin-left: 5px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Media queries para hacer la página más responsiva */
+    @media (max-width: 600px) {
+      .payment-container {
+        padding: 10px; /* Ajustar el padding en pantallas pequeñas */
+      }
+
+      .payment-header h1 {
+        font-size: 1.5rem; /* Ajustar el tamaño de fuente en pantallas pequeñas */
+      }
+
+      .payment-form h2 {
+        font-size: 1.2rem; /* Ajustar el tamaño de fuente en pantallas pequeñas */
+      }
+
+      .payment-form button {
+        font-size: 1rem; /* Ajustar el tamaño de fuente de los botones en pantallas pequeñas */
+      }
+
+      .footer p {
+        font-size: 0.8rem; /* Ajustar el tamaño de fuente en el pie de página en pantallas pequeñas */
+      }
+    }
+  </style>
+</head>
 <body>
-    <nav class="navigation">
-        <a href="Principal.html" class="logo">
-            <img src="Logo.jpg" alt="Dreams & Prints Logo">
-            <span>Dreams & Prints</span>
-        </a>
-        <a href="Principal.html"><i class="fas fa-home"></i> Inicio</a>
-        <a href="Catalogo.html"><i class="fas fa-th-list"></i> Catálogo</a>
-        <a href="Formas_Pago.html" class="active"><i class="fas fa-credit-card"></i> Formas de Pago</a>
-        <a href="Configuracion_Piezas.html"><i class="fas fa-cogs"></i> Configuración de Piezas</a>
-        <a href="Compras.html"><i class="fas fa-shopping-cart"></i> Carrito de Compras</a>
-        <a href="Acerca_de.html"><i class="fas fa-info-circle"></i> Acerca de</a>
-        <a href="Sesion.html"><i class="fas fa-user"></i> Cuenta</a>
-    </nav>
+  <nav class="navigation">
+    <a href="Principal.html" class="logo">
+      <img src="Logo.jpg" alt="Dreams & Prints Logo">
+      <span>Dreams & Prints</span>
+    </a>
+    <a href="Principal.html"><i class="fas fa-home"></i> Inicio</a>
+    <a href="Catalogo.html"><i class="fas fa-th-list"></i> Catálogo</a>
+    <a href="Formas_Pago.html" class="active"><i class="fas fa-credit-card"></i> Formas de Pago</a>
+    <a href="Configuracion_Piezas.html"><i class="fas fa-cogs"></i> Configuración de Piezas</a>
+    <a href="Compras.html"><i class="fas fa-shopping-cart"></i> Carrito de Compras</a>
+    <a href="Acerca_de.html"><i class="fas fa-info-circle"></i> Acerca de</a>
+    <a href="Sesion.html"><i class="fas fa-user"></i> Cuenta</a>
+  </nav>
 
-    <div class="payment-container">
-        <div class="payment-header">
-            <h1>Formas de Pago</h1>
-            <p>Elige tu método de pago preferido para una experiencia rápida y segura.</p>
-        </div>
-        <div class="payment-methods">
-            <h2>Opciones Disponibles:</h2>
-            <ul>
-                <li><i class="fas fa-credit-card"></i> Tarjeta de Crédito o Débito (Visa, MasterCard, American Express)</li>
-                <li><i class="fas fa-university"></i> Transferencia Bancaria (Contactos al por Whatsapp al 477-FER-0000 )</li>
-                <li><i class="fas fa-money-bill-wave"></i> Pago en Efectivo (Pagas al momento de entrega)</li>
-            </ul>
-        </div>
-
-        <div class="payment-form">
-            <h2>Ingresa tus Datos de Pago:</h2>
-            <form id="paymentForm">
-                <label for="nombre">Nombre del Titular:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                <label for="numeroTarjeta">Número de Tarjeta:</label>
-                <input type="text" id="numeroTarjeta" name="numeroTarjeta" required pattern="\d{16}">
-                <label for="fechaExpiracion">Fecha de Expiración (MM/AA):</label>
-                <input type="text" id="fechaExpiracion" name="fechaExpiracion" required pattern="\d{2}/\d{2}">
-                <label for="codigoSeguridad">Código de Seguridad (CVV):</label>
-                <input type="text" id="codigoSeguridad" name="codigoSeguridad" required pattern="\d{3}">
-                <button type="button" onclick="guardarDatosPago()">Guardar Datos de Pago</button>
-            </form>
-        </div>
-
-        <div id="tarjetasGuardadas" class="payment-methods">
-            <h2>Tarjetas Guardadas:</h2>
-            <ul id="tarjetasList"></ul>
-        </div>
+  <div class="payment-container">
+    <div class="payment-header">
+      <h1>Formas de Pago</h1>
+      <p>Elige tu método de pago preferido para una experiencia rápida y segura.</p>
+    </div>
+    <div class="payment-methods">
+      <h2>Opciones Disponibles:</h2>
+      <ul>
+        <li><i class="fas fa-credit-card"></i> Tarjeta de Crédito o Débito (Visa, MasterCard, American Express)</li>
+        <li><i class="fas fa-university"></i> Transferencia Bancaria (Contactos al por Whatsapp al 477-FER-0000 )</li>
+        <li><i class="fas fa-money-bill-wave"></i> Pago en Efectivo (Pagas al momento de entrega)</li>
+      </ul>
     </div>
 
-    <div class="footer">
-        <p>&copy; 2024 Dreams & Prints. Todos los derechos reservados.</p>
-        <p>Visita nuestra <a href="index.html">página principal</a>.</p>
+    <div class="payment-form">
+      <h2>Ingresa tus Datos de Pago:</h2>
+      <form id="paymentForm">
+        <label for="nombre">Nombre del Titular:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="numeroTarjeta">Número de Tarjeta:</label>
+        <input type="text" id="numeroTarjeta" name="numeroTarjeta" required pattern="\d{16}">
+        <label for="fechaExpiracion">Fecha de Expiración (MM/AA):</label>
+        <input type="text" id="fechaExpiracion" name="fechaExpiracion" required pattern="\d{2}/\d{2}">
+        <label for="codigoSeguridad">Código de Seguridad (CVV):</label>
+        <input type="text" id="codigoSeguridad" name="codigoSeguridad" required pattern="\d{3}">
+        <button type="button" onclick="guardarDatosPago()">Guardar Datos de Pago</button>
+      </form>
     </div>
 
-    <script>
-        function guardarDatosPago() {
-            const nombre = document.getElementById('nombre').value;
-            const numeroTarjeta = document.getElementById('numeroTarjeta').value;
+    <div id="tarjetasGuardadas" class="payment-methods">
+      <h2>Tarjetas Guardadas:</h2>
+      <ul id="tarjetasList"></ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2024 Dreams & Prints. Todos los derechos reservados.</p>
+    <p>Visita nuestra <a href="index.html">página principal</a>.</p>
+  </div>
+
+  <script>
+    function guardarDatosPago() {
+      const nombre = document.getElementById('nombre').value;
+      const numeroTarjeta = document.getElementById('numeroTarjeta').value;
             const fechaExpiracion = document.getElementById('fechaExpiracion').value;
-            const codigoSeguridad = document.getElementById('codigoSeguridad').value;
+      const codigoSeguridad = document.getElementById('codigoSeguridad').value;
 
-            // Verificación de tipo
-            const nombreRegex = /^[a-zA-Z\s]+$/;
-            const numeroRegex = /^[0-9]{16}$/;
-            const fechaRegex = /^[0-9]{2}\/[0-9]{2}$/;
-            const cvvRegex = /^[0-9]{3}$/;
+      // Verificación de tipo
+      const nombreRegex = /^[a-zA-Z\s]+$/;
+      const numeroRegex = /^[0-9]{16}$/;
+      const fechaRegex = /^[0-9]{2}\/[0-9]{2}$/;
+      const cvvRegex = /^[0-9]{3}$/;
 
-            if (!nombreRegex.test(nombre)) {
-                alert("El nombre solo debe contener letras.");
-                return;
-            }
-            if (!numeroRegex.test(numeroTarjeta)) {
-                alert("El número de tarjeta debe tener 16 dígitos.");
-                return;
-            }
-            if (!fechaRegex.test(fechaExpiracion)) {
-                alert("La fecha de expiración debe tener el formato MM/AA.");
-                return;
-            }
-            if (!cvvRegex.test(codigoSeguridad)) {
-                alert("El código de seguridad (CVV) debe ser de 3 dígitos.");
-                return;
-            }
+      if (!nombreRegex.test(nombre)) {
+        alert("El nombre solo debe contener letras.");
+        return;
+      }
+      if (!numeroRegex.test(numeroTarjeta)) {
+        alert("El número de tarjeta debe tener 16 dígitos.");
+        return;
+      }
+      if (!fechaRegex.test(fechaExpiracion)) {
+        alert("La fecha de expiración debe tener el formato MM/AA.");
+        return;
+      }
+      if (!cvvRegex.test(codigoSeguridad)) {
+        alert("El código de seguridad (CVV) debe ser de 3 dígitos.");
+        return;
+      }
 
-            const datosPago = { nombre, numeroTarjeta, fechaExpiracion, codigoSeguridad };
-            let tarjetasGuardadas = JSON.parse(localStorage.getItem('tarjetasGuardadas')) || [];
+      const datosPago = { nombre, numeroTarjeta, fechaExpiracion, codigoSeguridad };
+      let tarjetasGuardadas = JSON.parse(localStorage.getItem('tarjetasGuardadas')) || [];
 
-            tarjetasGuardadas.push(datosPago);
-            localStorage.setItem('tarjetasGuardadas', JSON.stringify(tarjetasGuardadas));
-            mostrarTarjetasGuardadas();
-        }
+      tarjetasGuardadas.push(datosPago);
+      localStorage.setItem('tarjetasGuardadas', JSON.stringify(tarjetasGuardadas));
+      mostrarTarjetasGuardadas();
+    }
 
-        function mostrarTarjetasGuardadas() {
-            const tarjetasGuardadas = JSON.parse(localStorage.getItem('tarjetasGuardadas')) || [];
-            const tarjetasList = document.getElementById('tarjetasList');
-            tarjetasList.innerHTML = '';
+    function mostrarTarjetasGuardadas() {
+      const tarjetasGuardadas = JSON.parse(localStorage.getItem('tarjetasGuardadas')) || [];
+      const tarjetasList = document.getElementById('tarjetasList');
+      tarjetasList.innerHTML = '';
 
-            tarjetasGuardadas.forEach((tarjeta, index) => {
-                const li = document.createElement('li');
-                li.innerHTML = `
-                    <strong>${tarjeta.nombre}</strong><br>
-                    Tarjeta terminada en ${tarjeta.numeroTarjeta.slice(-4)}<br>
-                    Expira: ${tarjeta.fechaExpiracion}<br>
-                    <button onclick="eliminarTarjeta(${index})">Eliminar</button>
-                `;
-                tarjetasList.appendChild(li);
-            });
-        }
+      tarjetasGuardadas.forEach((tarjeta, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <strong>${tarjeta.nombre}</strong><br>
+          Tarjeta terminada en ${tarjeta.numeroTarjeta.slice(-4)}<br>
+          Expira: ${tarjeta.fechaExpiracion}<br>
+          <button onclick="eliminarTarjeta(${index})">Eliminar</button>
+        `;
+        tarjetasList.appendChild(li);
+      });
+    }
 
-        function eliminarTarjeta(index) {
-            let tarjetasGuardadas = JSON.parse(localStorage.getItem('tarjetasGuardadas')) || [];
-            tarjetasGuardadas.splice(index, 1);
-            localStorage.setItem('tarjetasGuardadas', JSON.stringify(tarjetasGuardadas));
-            mostrarTarjetasGuardadas();
-        }
+    function eliminarTarjeta(index) {
+      let tarjetasGuardadas = JSON.parse(localStorage.getItem('tarjetasGuardadas')) || [];
+      tarjetasGuardadas.splice(index, 1);
+      localStorage.setItem('tarjetasGuardadas', JSON.stringify(tarjetasGuardadas));
+      mostrarTarjetasGuardadas();
+    }
 
-        document.addEventListener('DOMContentLoaded', mostrarTarjetasGuardadas);
-    </script>
+    document.addEventListener('DOMContentLoaded', mostrarTarjetasGuardadas);
+  </script>
 </body>
 </html>
+
 

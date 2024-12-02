@@ -24,7 +24,7 @@
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: 100%;
+      width: 90%; /* Cambiado para que sea más responsivo */
       max-width: 400px;
       text-align: center;
     }
@@ -46,7 +46,7 @@
     }
 
     .login-container .input-group input {
-      width: 95%;
+      width: 100%; /* Cambiado para que sea más responsivo */
       padding: 10px;
       border: 1px solid #ced4da; /* Gris claro */
       border-radius: 5px;
@@ -101,12 +101,28 @@
     .login-container .back-button:hover {
       background-color: #5a6268; /* Gris más oscuro */
     }
+
+    /* Media queries para hacer la página más responsiva */
+    @media (max-width: 600px) {
+      .login-container {
+        padding: 20px; /* Ajustar el padding en pantallas pequeñas */
+      }
+
+      .login-container h2 {
+        font-size: 1.5rem; /* Ajustar el tamaño de fuente en pantallas pequeñas */
+      }
+
+      .login-container .login-button, 
+      .login-container .back-button {
+        width: 100%; /* Botones a lo largo del contenedor en pantallas pequeñas */
+      }
+    }
   </style>
 </head>
 <body>
   <div class="login-container">
     <h2>Inicio de Sesión</h2>
-    <form>
+    <form id="login-form">
       <div class="input-group">
         <label for="email">Correo Electrónico:</label>
         <input type="email" id="email" name="email" required>
@@ -125,5 +141,24 @@
     </div>
     <button class="back-button" onclick="window.location.href='Principal.html'">Volver a la página principal</button>
   </div>
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const user = JSON.parse(localStorage.getItem('user'));
+
+      if (user && user.email === email && user.password === password) {
+        localStorage.setItem('loggedIn', 'true');
+        localStorage.setItem('loggedInUser', user.name);
+        alert('Inicio de sesión exitoso. ¡Bienvenido ' + user.name + '!');
+        window.location.href = 'Principal.html';
+      } else {
+        alert('Correo electrónico o contraseña incorrectos.');
+      }
+    });
+  </script>
 </body>
 </html>
+
+

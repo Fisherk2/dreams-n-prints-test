@@ -21,6 +21,7 @@
       gap: 15px;
       background-color: #343a40; /* Gris oscuro */
       padding: 10px 0;
+      flex-wrap: wrap; /* Añadido para que la navegación se apile en pantallas pequeñas */
     }
 
     .navigation a {
@@ -55,7 +56,8 @@
       border: 1px solid #ddd;
       border-radius: 10px;
       overflow: hidden;
-      width: 250px;
+      width: calc(100% / 2 - 40px); /* Ajuste para pantallas medianas */
+      max-width: 300px; /* Limita el ancho máximo */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
     }
@@ -101,6 +103,20 @@
     .catalog-info p {
       font-size: 1rem;
       color: #495057; /* Gris intermedio */
+    }
+
+    @media (max-width: 600px) {
+      .catalog-item {
+        width: 100%; /* Los elementos ocuparán el 100% del ancho en pantallas pequeñas */
+      }
+
+      .catalog-info h2 {
+        font-size: 1.2rem;
+      }
+
+      .catalog-info p {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -150,6 +166,7 @@
   </main>
 </body>
 </html>
+
 
 
 
