@@ -78,6 +78,20 @@
       margin: 0;
     }
 
+    .delete-btn {
+      background-color: #dc3545; /* Rojo */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .delete-btn:hover {
+      background-color: #c82333; /* Rojo más oscuro */
+    }
+
     .total {
       margin-top: 20px;
       font-size: 1.2rem;
@@ -134,7 +148,7 @@
     <a href="Acerca_de.html"><i class="fas fa-info-circle"></i> Acerca de</a>
     <a href="Sesion.html"><i class="fas fa-user"></i> Cuenta</a>
   </nav>
-  
+
   <div class="cart-container">
     <div class="cart-header">
       <h1>Carrito de Compras</h1>
@@ -163,6 +177,7 @@
             <p><strong>Dimensiones:</strong> ${carrito.dimension}</p>
             <p><strong>Material:</strong> ${carrito.material}</p>
             <p><strong>Color:</strong> ${carrito.color}</p>
+            <button class="delete-btn" onclick="eliminarProducto('${carrito.producto}')">Eliminar</button>
           </div>
         `;
         
@@ -172,6 +187,18 @@
         cartItems.innerHTML = '<p>El carrito está vacío.</p>';
       }
     });
+
+    function eliminarProducto(producto) {
+      let carrito = JSON.parse(localStorage.getItem('carrito'));
+
+      // Si el producto en el localStorage coincide, se elimina.
+      if (carrito && carrito.producto === producto) {
+        localStorage.removeItem('carrito');
+      }
+
+      // Recargar la página para reflejar los cambios
+      location.reload();
+    }
 
     function realizarCompra() {
       alert('¡Compra realizada con éxito! Procesando...');
