@@ -59,24 +59,24 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
     }
-.navigation .logo {
-  display: flex;
-  align-items: center;
-  margin-right: 20px; /* Mantiene el logo a la izquierda */
-  
-  text-decoration: none;
-  color: #fff;
-}
 
-.navigation .logo img {
-  height: 40px; /* Ajusta el tamaño del logo */
-  margin-right: 5px;
-}
+    .navigation .logo {
+      display: flex;
+      align-items: center;
+      margin-right: 20px; /* Mantiene el logo a la izquierda */
+      text-decoration: none;
+      color: #fff;
+    }
 
-.navigation .logo span {
-  font-size: 1.2em;
-  font-weight: bold;
-}
+    .navigation .logo img {
+      height: 40px; /* Ajusta el tamaño del logo */
+      margin-right: 5px;
+    }
+
+    .navigation .logo span {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
 
     .catalog-item:hover {
       transform: scale(1.05);
@@ -102,32 +102,16 @@
       font-size: 1rem;
       color: #495057; /* Gris intermedio */
     }
-
-    .catalog-info .cta {
-      background: linear-gradient(90deg, #ff6f61 0%, #ff9671 100%);
-      color: #fff; /* Texto blanco */
-      border: none;
-      padding: 10px 20px;
-      border-radius: 20px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .catalog-info .cta:hover {
-      background-color: #ff4c4c; /* Rojo claro */
-      transform: scale(1.1);
-    }
   </style>
 </head>
 <body>
-    <nav class="navigation">
-        <a href="Principal.html" class="logo">
-          <img src="Logo.jpg" alt="Dreams & Prints Logo">
-          <span>Dreams & Prints</span>
-        </a>
+  <nav class="navigation">
+    <a href="Principal.html" class="logo">
+      <img src="Logo.jpg" alt="Dreams & Prints Logo">
+      <span>Dreams & Prints</span>
+    </a>
     <a href="Principal.html"><i class="fas fa-home"></i> Inicio</a>
-    <a href="Catalogo.html" class="active"> <i class="fas fa-th-list"></i> Catálogo</a>
+    <a href="Catalogo.html" class="active"><i class="fas fa-th-list"></i> Catálogo</a>
     <a href="Formas_Pago.html"><i class="fas fa-credit-card"></i> Formas de Pago</a>
     <a href="Configuracion_Piezas.html"><i class="fas fa-cogs"></i> Configuración de Piezas</a>
     <a href="Compras.html"><i class="fas fa-shopping-cart"></i> Carrito de Compras</a>
@@ -135,39 +119,37 @@
     <a href="Sesion.html"><i class="fas fa-user"></i> Cuenta</a>
   </nav>
   <main class="catalog-list">
-    <div class="catalog-item">
+    <div id="catalog-item-1" class="catalog-item">
       <img src="Mano.jpg" alt="Mano">
       <div class="catalog-info">
         <h2>Mano</h2>
         <p>Con la impresión 3D, podemos crear una réplica precisa y detallada de una mano, capturando cada contorno y textura. Esta tecnología permite personalizar modelos realistas, perfectos para proyectos artísticos, educativos o como una pieza única y personalizada.</p>
-        <button class="cta" onclick="window.location.href='Compras.html'">Comprar</button>
       </div>
     </div>
-    <div class="catalog-item">
+    <div id="catalog-item-2" class="catalog-item">
       <img src="Barco.jpg" alt="Barco">
       <div class="catalog-info">
         <h2>Barco</h2>
         <p>Con la impresión 3D, podemos crear un barco detallado y personalizado, desde modelos decorativos hasta diseños complejos. Esta tecnología permite reproducir formas precisas con acabados profesionales y materiales duraderos, haciendo realidad tus ideas de manera única y creativa.</p>
-        <button class="cta" onclick="window.location.href='Compras.html'">Comprar</button>
       </div>
     </div>
-    <div class="catalog-item">
+    <div id="catalog-item-3" class="catalog-item">
       <img src="Cara.jpg" alt="Cara">
       <div class="catalog-info">
         <h2>Cara</h2>
         <p>Con la impresión 3D, podemos crear una réplica detallada y precisa de una cara, capturando cada rasgo y expresión. Esta tecnología permite personalizar modelos faciales con gran realismo, ideal para proyectos artísticos, estudios o recuerdos únicos.</p>
-        <button class="cta" onclick="window.location.href='Compras.html'">Comprar</button>
       </div>
     </div>
-    <div class="catalog-item">
+    <div id="catalog-item-4" class="catalog-item">
       <img src="Mascara.jpg" alt="Mascara">
       <div class="catalog-info">
         <h2>Mascara</h2>
         <p>Convierte tus ideas en realidad con la impresión 3D, creando máscaras únicas y personalizadas con gran detalle y precisión. Desde diseños estilizados hasta creaciones innovadoras, esta tecnología permite formas complejas, personalización total y acabados profesionales en materiales de alta calidad. ¡Imagina, diseña e imprime sin límites!</p>
-        <button class="cta" onclick="window.location.href='Compras.html'">Comprar</button>
       </div>
     </div>
   </main>
 </body>
 </html>
+
+
 

@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap');
-
+    
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
@@ -51,113 +51,70 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .config-header {
-      text-align: center;
-      padding: 20px 0;
-    }
-
     .config-header h1 {
-      font-size: 2rem;
+      text-align: center;
       color: #ff6f61; /* Coral */
       margin-bottom: 10px;
-    }
-
-    .config-header p {
-      font-size: 1rem;
-      color: #495057; /* Gris intermedio */
-    }
-
-    .config-form {
-      margin-top: 30px;
     }
 
     .config-form label {
-      font-size: 1.2rem;
-      color: #495057; /* Gris intermedio */
       display: block;
       margin-bottom: 10px;
     }
 
-    .config-form input, .config-form select {
+    .config-form select, .config-form input {
       width: 100%;
-      padding: 10px;
-      font-size: 1rem;
       margin-bottom: 20px;
-      border-radius: 5px;
+      padding: 10px;
       border: 1px solid #ddd;
+      border-radius: 5px;
     }
 
     .config-form button {
-      display: block;
       width: 100%;
       background: linear-gradient(90deg, #ff6f61 0%, #ff9671 100%);
-      color: #fff; /* Texto blanco */
+      color: white;
+      padding: 15px;
       border: none;
-      padding: 15px 0;
       border-radius: 20px;
-      font-size: 1.2rem;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+      transition: transform 0.3s;
     }
 
     .config-form button:hover {
-      background-color: #ff4c4c; /* Rojo claro */
       transform: scale(1.05);
     }
 
-    .footer {
-      text-align: center;
-      padding: 20px 0;
-      background-color: #343a40; /* Gris oscuro */
-      color: #fff; /* Texto blanco */
-      margin-top: 40px;
-    }
-
-    .footer p {
-      margin: 0;
-      font-size: 1rem;
-    }
-.navigation .logo {
-  display: flex;
-  align-items: center;
-  margin-right: 20px; /* Mantiene el logo a la izquierda */
-
-  text-decoration: none;
-  color: #fff;
-}
-
-.navigation .logo img {
-  height: 40px; /* Ajusta el tamaño del logo */
-  margin-right: 5px;
-}
-
-.navigation .logo span {
-  font-size: 1.2em;
-  font-weight: bold;
-}
-    .footer a {
-      color: #ff6f61; /* Coral */
+    .navigation .logo {
+      display: flex;
+      align-items: center;
+      margin-right: 20px; /* Mantiene el logo a la izquierda */
       text-decoration: none;
-      margin-left: 5px;
+      color: #fff;
     }
 
-    .footer a:hover {
-      text-decoration: underline;
+    .navigation .logo img {
+      height: 40px; /* Ajusta el tamaño del logo */
+      margin-right: 5px;
+    }
+
+    .navigation .logo span {
+      font-size: 1.2em;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
   <nav class="navigation">
-             <a href="Principal.html" class="logo">
-          <img src="Logo.jpg" alt="Dreams & Prints Logo">
-          <span>Dreams & Prints</span>
-        </a>
+    <a href="Principal.html" class="logo">
+      <img src="Logo.jpg" alt="Dreams & Prints Logo">
+      <span>Dreams & Prints</span>
+    </a>
     <a href="Principal.html"><i class="fas fa-home"></i> Inicio</a>
     <a href="Catalogo.html"><i class="fas fa-th-list"></i> Catálogo</a>
-    <a href="Formas_Pago.html"><i class="fas fa-credit-card"></i> Formas de Pago</a>
     <a href="Configuracion_Piezas.html" class="active"><i class="fas fa-cogs"></i> Configuración de Piezas</a>
     <a href="Compras.html"><i class="fas fa-shopping-cart"></i> Carrito de Compras</a>
-    <a href="Acerca_de.html" ><i class="fas fa-info-circle"></i> Acerca de</a>
+    <a href="Acerca_de.html"><i class="fas fa-info-circle"></i> Acerca de</a>
     <a href="Sesion.html"><i class="fas fa-user"></i> Cuenta</a>
   </nav>
   <div class="config-container">
@@ -165,29 +122,65 @@
       <h1>Configuración de Piezas</h1>
       <p>Personaliza tus piezas según tus necesidades.</p>
     </div>
-    <div class="config-form">
-      <label for="dimension">Dimensiones:</label>
-      <input type="text" id="dimension" name="dimension" placeholder="Ej. 10x10 cm">
-
-      <label for="material">Material:</label>
-      <select id="material" name="material">
-        <option value="plastico">Plástico</option>
-        <option value="metal">Metal</option>
-        <option value="madera">Madera</option>
-        <option value="vidrio">Vidrio</option>
+    <form class="config-form">
+      <label for="producto">Producto:</label>
+      <select id="producto" name="producto" onchange="actualizarPrecio()">
+        <option value="">Seleccione un producto</option>
+        <option value="Mano" data-precio="150">Mano</option>
+        <option value="Barco" data-precio="250">Barco</option>
+        <option value="Cara" data-precio="250">Cara</option>
+        <option value="Mascara" data-precio="300">Máscara</option>
       </select>
-
+      <label for="dimension">Dimensiones:</label>
+      <select id="dimension" name="dimension" onchange="actualizarPrecio()">
+        <option value="">Seleccione una dimensión</option>
+        <option value="10x10 cm" data-precio="10">10x10 cm</option>
+        <option value="15x15 cm" data-precio="20">15x15 cm</option>
+      </select>
+      <label for="material">Material:</label>
+      <select id="material" name="material" onchange="actualizarPrecio()">
+        <option value="">Seleccione un material</option>
+        <option value="plastico" data-precio="5">Plástico</option>
+        <option value="metal" data-precio="15">Metal</option>
+      </select>
       <label for="color">Color:</label>
       <input type="text" id="color" name="color" placeholder="Ej. Rojo">
+      <p id="precio">Precio: $0.00</p>
+      <button type="button" onclick="guardarConfiguracion()">Guardar Configuración</button>
+    </form>
+  </div>
+  <script>
+    function actualizarPrecio() {
+      const producto = document.getElementById('producto');
+      const dimension = document.getElementById('dimension');
+      const material = document.getElementById('material');
+      const precioProducto = parseFloat(producto.options[producto.selectedIndex]?.getAttribute('data-precio') || 0);
+      const precioDimension = parseFloat(dimension.options[dimension.selectedIndex]?.getAttribute('data-precio') || 0);
+      const precioMaterial = parseFloat(material.options[material.selectedIndex]?.getAttribute('data-precio') || 0);
+      const precioTotal = precioProducto + precioDimension + precioMaterial;
+      document.getElementById('precio').textContent = 'Precio: $' + precioTotal.toFixed(2);
+    }
 
-      <button type="submit">Guardar Configuración</button>
-    </div>
-  </div>
-  <div class="footer">
-    <p>&copy; 2024 Dreams & Prints. Todos los derechos reservados.</p>
-    <p>Visita nuestra <a href="index.html">página principal</a>.</p>
-  </div>
+    function guardarConfiguracion() {
+      const producto = document.getElementById('producto').value;
+      const dimension = document.getElementById('dimension').value;
+      const material = document.getElementById('material').value;
+      const color = document.getElementById('color').value;
+      if (!producto || !dimension || !material || !color) {
+        alert('Por favor, complete todos los campos antes de guardar.');
+        return;
+      }
+      const configuracion = {
+        producto,
+        dimension,
+        material,
+        color,
+        precio: document.getElementById('precio').textContent
+      };
+      localStorage.setItem('carrito', JSON.stringify(configuracion));
+      alert('Configuración guardada en el carrito.');
+    }
+  </script>
 </body>
 </html>
-
 
