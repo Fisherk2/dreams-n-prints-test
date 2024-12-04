@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D&P: Carrito de Compras</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f2f5; /* Fondo gris claro */
+      color: #343a40; /* Texto gris oscuro */
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background-color: #343a40; /* Gris oscuro */
+      padding: 10px 0;
+      flex-wrap: wrap; /* Añadido para que la navegación se apile en pantallas pequeñas */
+    }
+
+    .navigation a {
+      text-decoration: none;
+      font-size: 1rem;
+      color: #ff6f61; /* Coral */
+      padding: 10px 15px;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .navigation a:hover {
+      background-color: #ff6f61; /* Coral */
+      color: #fff; /* Texto blanco */
+    }
+
+    .navigation .active {
+      background-color: #ff6f61; /* Coral */
+      color: #fff; /* Texto blanco */
+    }
+
+    .cart-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-header {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .cart-header h1 {
+      font-size: 2rem;
+      color: #ff6f61; /* Coral */
+      margin-bottom: 10px;
+    }
+
+    .cart-header p {
+      font-size: 1rem;
+      color: #495057; /* Gris intermedio */
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+      flex-wrap: wrap; /* Añadido para que los elementos se apilen en pantallas pequeñas */
+    }
+
+    .cart-item p {
+      margin: 0;
+      flex: 1 1 100%; /* Los elementos ocuparán el 100% del ancho en pantallas pequeñas */
+      text-align: left;
+    }
+
+    .delete-btn {
+      background-color: #dc3545; /* Rojo */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      flex: 1 1 100%; /* El botón ocupará el 100% del ancho en pantallas pequeñas */
+      margin-top: 10px;
+    }
+
+    .delete-btn:hover {
+      background-color: #c82333; /* Rojo más oscuro */
+    }
+
+    .total {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: right;
+      color: #333;
+    }
+
+    .start-btn {
+      width: 100%;
+      padding: 15px;
+      background-color: #ff6f61; /* Coral */
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s;
+      margin-top: 10px; /* Añadido para separar los botones */
+    }
+
+    .start-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .navigation .logo {
+      display: flex;
+      align-items: center;
+      margin-right: 20px; /* Mantiene el logo a la izquierda */
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .navigation .logo img {
+      height: 40px; /* Ajusta el tamaño del logo */
+      margin-right: 5px;
+    }
+
+    .navigation .logo span {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .cart-container {
+        margin: 20px;
+        padding: 10px;
+      }
+
+      .cart-header h1 {
+        font-size: 1.5rem;
+      }
+
+      .cart-header p {
+        font-size: 0.9rem;
+      }
+
+      .total {
+        font-size: 1rem;
+      }
+
+      .start-btn {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navigation">
+    <a href="Principal.html" class="logo">
+      <img src="Logo.jpg" alt="Dreams & Prints Logo">
+      <span>Dreams & Prints</span>
+    </a>
+    <a href="Principal.html"><i class="fas fa-home"></i> Inicio</a>
+    <a href="Catalogo.html"><i class="fas fa-th-list"></i> Catálogo</a>
+    <a href="Configuracion_Piezas.html"><i class="fas fa-cogs"></i> Configuración de Piezas</a>
+    <a href="Compras.html" class="active"><i class="fas fa-shopping-cart"></i> Carrito de Compras</a>
+    <a href="Acerca_de.html"><i class="fas fa-info-circle"></i> Acerca de</a>
+    <a href="Sesion.html"><i class="fas fa-user"></i> Cuenta</a>
+  </nav>
+
+  <div class="cart-container">
+    <div class="cart-header">
+      <h1>Carrito de Compras</h1>
+      <p>Estos son los productos que has seleccionado:</p>
+    </div>
+    <div id="cartItems">
+      <!-- Los elementos del carrito se agregarán aquí dinámicamente -->
+    </div>
+    <div class="total" id="totalPrice">Total: $0.00</div>
+    <button class="start-btn" onclick="comenzarPedido()">Comenzar</button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Obtener los datos del carrito desde el localStorage
+      const carrito = JSON.parse(localStorage.getItem('carrito'));
+      const cartItems = document.getElementById('cartItems');
+      const totalPrice = document.getElementById('totalPrice');
+      
+      if (carrito) {
+        // Mostrar los productos del carrito
+        const precioTotal = carrito.precio.split('$')[1]; // Extraer el valor numérico
+        cartItems.innerHTML = `
+          <div class="cart-item">
+            <p><strong>Producto:</strong> ${carrito.producto}</p>
+            <p><strong>Dimensiones:</strong> ${carrito.dimension}</p>
+            <p><strong>Material:</strong> ${carrito.material}</p>
+            <p><strong>Color:</strong> ${carrito.color}</p>
+            <button class="delete-btn" onclick="eliminarProducto('${carrito.producto}')">Eliminar</button>
+          </div>
+        `;
+        
+        // Actualizar el total
+        totalPrice.textContent = 'Total: $' + parseFloat(precioTotal).toFixed(2);
+      } else {
+        cartItems.innerHTML = '<p>El carrito está vacío.</p>';
+      }
+    });
+
+    function eliminarProducto(producto) {
+      let carrito = JSON.parse(localStorage.getItem('carrito'));
+
+      // Si el producto en el localStorage coincide, se elimina.
+      if (carrito && carrito.producto === producto) {
+        localStorage.removeItem('carrito');
+      }
+
+      // Recargar la página para reflejar los cambios
+      location.reload();
+    }
+
+    function comenzarPedido() {
+      alert('¡Se ha comenzado con el proceso del pedido!');
+      // Aquí puedes agregar más lógica para manejar el comienzo del proceso del pedido
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
